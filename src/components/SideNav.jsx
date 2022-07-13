@@ -15,7 +15,7 @@ export default function sideNav({ currentPage }) {
             }`}
           >
             <HiHome className="link-icon" />
-            Home
+            <p className="link-text">Home</p>
           </Link>
         </li>
         <li>
@@ -26,7 +26,7 @@ export default function sideNav({ currentPage }) {
             }`}
           >
             <FaBriefcase className="link-icon" />
-            Projects
+            <p className="link-text">Projects</p>
           </Link>
         </li>
         <li>
@@ -37,7 +37,7 @@ export default function sideNav({ currentPage }) {
             }`}
           >
             <FaUser className="link-icon" />
-            About Me
+            <p className="link-text">About Me</p>
           </Link>
         </li>
         <li>
@@ -48,7 +48,7 @@ export default function sideNav({ currentPage }) {
             }`}
           >
             <HiChatAlt className="link-icon" />
-            Contact
+            <p className="link-text">Contact</p>
           </Link>
         </li>
       </ul>

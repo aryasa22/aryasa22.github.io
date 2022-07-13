@@ -318,3 +318,48 @@ code {
   transform: scale(1.1);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .side-navbar {
+    width: 100vw;
+    height: 3rem;
+    padding: 0 2rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .link-icon {
+    font-size: 1.2rem;
+  }
+
+  .link-text {
+    display: none;
+  }
+
+  .container {
+    margin: 0;
+    padding-top: 3rem;
+  }
+
+  .projects-content-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .skill-icon {
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+}
