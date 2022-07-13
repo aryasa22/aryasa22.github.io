@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Kitchen Gallery",
+        "link": "https://aryasa22.github.io/kitchen-gallery",
+        "img_url": "project-img-kg",
+        "description": "A web app that consume API from recipe API. This website allows us to search many recipes from many countries around the world. This page made by using React JS."
+    },
+    {
+        "id": 2,
+        "title": "Mahamath Statistics",
+        "link": "https://aryasa22.github.io/mahamath",
+        "img_url": "project-img-ms",
+        "description": "A responsive landing page that made by HTML, CSS, and JavaScript. This page offers you a data analisys service."
+    },
+    {
+        "id": 3,
+        "title": "Todo List",
+        "link": "https://aryasa22.github.io/todo-list",
+        "img_url": "project-img-tl",
+        "description": "A web app that allows you to create, update, and delete todo lists. This website made by using React JS."
+    },
+    {
+        "id": 4,
+        "title": "Savitri Mode",
+        "link": "https://aryasa22.github.io/savitri-mode",
+        "img_url": "project-img-sm",
+        "description": "A responsive landing page made with HTML, CSS, and JavaScript. This page offers a make up and costume service."
+    },
+    {
+        "id": 5,
+        "title": "Tic Tac Toe",
+        "link": "https://aryasa22.github.io/tic-tac-toe",
+        "img_url": "project-img-ttt",
+        "description": "A responsive landing page made with HTML, CSS, and JavaScript. This page offers a make up and costume service."
+    }
+]
