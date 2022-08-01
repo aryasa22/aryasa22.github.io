@@ -15,6 +15,7 @@ const contactLink = document.querySelector(".contact-link");
 const mobileHomeLink = document.querySelector(".mobile-home-link");
 const mobileProjectsLink = document.querySelector(".mobile-projects-link");
 const mobileContactLink = document.querySelector(".mobile-contact-link");
+const contactButton = document.querySelector(".intro-btn");
 
 const homeSection = document.querySelector("#homeSection");
 const projectsSection = document.querySelector("#projectsSection");
@@ -43,6 +44,10 @@ mobileProjectsLink.addEventListener("click", () => {
 });
 
 contactLink.addEventListener("click", () => {
+  contactSection.scrollIntoView({ behavior: "smooth" });
+});
+
+contactButton.addEventListener("click", () => {
   contactSection.scrollIntoView({ behavior: "smooth" });
 });
 
