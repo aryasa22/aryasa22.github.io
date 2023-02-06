@@ -15,7 +15,6 @@ const contactLink = document.querySelector(".contact-link");
 const mobileHomeLink = document.querySelector(".mobile-home-link");
 const mobileProjectsLink = document.querySelector(".mobile-projects-link");
 const mobileContactLink = document.querySelector(".mobile-contact-link");
-const contactButton = document.querySelector(".intro-btn");
 
 const homeSection = document.querySelector("#homeSection");
 const projectsSection = document.querySelector("#projectsSection");
@@ -44,10 +43,6 @@ mobileProjectsLink.addEventListener("click", () => {
 });
 
 contactLink.addEventListener("click", () => {
-  contactSection.scrollIntoView({ behavior: "smooth" });
-});
-
-contactButton.addEventListener("click", () => {
   contactSection.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -102,12 +97,7 @@ const tl = gsap.timeline({ duration: 0.5, ease: "Power1" });
 tl.from(".jumbo", {
   x: "-100%",
   opacity: 0,
-})
-  .from(".intro", {
-    x: "100%",
-    opacity: 0,
-  })
-  .from(".navbar", {
+}).from(".navbar", {
     scale: 0,
     opacity: 0,
   });
@@ -135,6 +125,7 @@ sectionTitles.forEach((title) => {
 // Project Content Scroll Animation
 const projectImages = document.querySelectorAll(".project-img");
 const projectDescs = document.querySelectorAll(".project-desc");
+const aboutItems = document.querySelectorAll(".about-item");
 
 projectImages.forEach((image) => {
   gsap.from(image, {
@@ -167,53 +158,17 @@ projectDescs.forEach((desc) => {
 });
 
 // Contact Form Scroll Animation
-gsap.from(".contact-form", {
-  opacity: 0,
-  x: 100,
+aboutItems.forEach((item) => {
+  gsap.from(item, {
+    x: -50,
+    opacity: 0,
+    duration: 0.5,
 
-  scrollTrigger: {
-    trigger: ".contact-form",
-    toggleActions: "play reset play reset",
-  },
-});
-
-// Contact Form Handle
-const contactForm = document.querySelector("#contactForm");
-const nameInput = document.querySelector(".name-input");
-const emailInput = document.querySelector(".email-input");
-const msgInput = document.querySelector(".msg-input");
-const errorMsg = document.querySelector(".error-msg");
-
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  if (nameInput.value === "") {
-    errorMsg.classList.remove("hidden");
-    return;
-  }
-  if (emailInput.value === "") {
-    errorMsg.classList.remove("hidden");
-    return;
-  }
-  if (msgInput.value === "") {
-    errorMsg.classList.remove("hidden");
-    return;
-  }
-
-  emailjs.sendForm("service_rj74daf", "template_b260lvq", "#contactForm").then(
-    function (response) {
-      console.log("SUCCESS!", response.status, response.text);
+    scrollTrigger: {
+      trigger: item,
+      start: "top 100%",
+      end: "top -20%",
+      toggleActions: "play reset play reset",
     },
-    function (error) {
-      console.log("FAILED...", error);
-    }
-  );
-
-  nameInput.value = "";
-  emailInput.value = "";
-  msgInput.value = "";
-
-  errorMsg.classList.add("hidden");
-
-  alert("Message Sent!");
+  });
 });

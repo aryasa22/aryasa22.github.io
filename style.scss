@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 // Color Variables
+$bg-color: #F1FAEE;
 $black-color: #040D08;
 $white-color: #f1f1f1;
-$dark-green: #1C603F;
+$dark-blue: #1D3557;
 $green-color: #247A4D;
 $muted-color: #868C89;
+$light-blue: #457B9D;
 
 // Font Variables
 $main-font: 'Inter', sans-serif;
@@ -18,8 +20,8 @@ $second-font: 'Playfair Display', serif;
 }
 
 body {
-    background-color: $black-color;
-    color: $white-color;
+    background-color: $bg-color;
+    color: $black-color;
     min-height: 100vh;
     font-family: $main-font;
     overflow-x: hidden;
@@ -49,7 +51,8 @@ a {
 }
 
 .main-btn {
-    background: $green-color;
+    color: $white-color;
+    background: $light-blue;
     position: relative;
     z-index: 1;
     transition: all .3s ease;
@@ -96,8 +99,8 @@ a {
 }
 
 .secondary-btn {
-    color: $green-color;
-    border: 1px solid $green-color;
+    color: $light-blue;
+    border: 1px solid $light-blue;
     position: relative;
     z-index: 1;
     transition: all .3s ease;
@@ -110,7 +113,7 @@ a {
         bottom: 0;
         height: 100%;
         width: 100%;
-        background: $green-color;
+        background: $light-blue;
         z-index: -1;
         transform-origin: right;
         transform: scaleX(10%) translateX(-1000%);
@@ -161,14 +164,14 @@ section {
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: fixed;
-    background: $black-color;
+    background: $bg-color;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
 
     .navbar-nav {
-        margin: auto;
+        margin-left: auto;
 
         .navbar-links {
             list-style: none;
@@ -182,7 +185,7 @@ section {
                 transition: color .3s ease;
 
                 &:hover {
-                    color: $green-color;
+                    color: $light-blue;
                     animation: coloring 1s ease-out backwards;
                 }
 
@@ -210,8 +213,8 @@ section {
             }
 
             .link-active {
-                color: $green-color;
-                border-bottom: 3px solid $green-color;
+                color: $light-blue;
+                border-bottom: 3px solid $light-blue;
             }
         }
     }
@@ -236,18 +239,28 @@ section {
         .jumbo {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
-    
+
+            .medium-text {
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+
+            .small-text{
+                font-size: 1.5rem;
+            }
+
             .jumbo-heading {
                 font-family: $second-font;
                 font-size: 4rem;
+                margin-bottom: 1rem;
 
-                .green-text {
-                    color: $dark-green;
+                .blue-text {
+                    color: $light-blue;
                 }
             }
 
             .jumbo-socials {
+                margin-top: 1rem;
                 font-size: 1.5rem;
                 display: flex;
                 gap: 2rem;
@@ -258,7 +271,7 @@ section {
 
                     &:hover {
                         animation: rotating .5s ease-in-out backwards;
-                        color: $green-color;
+                        color: $light-blue;
                     }
 
                     @keyframes rotating {
@@ -401,43 +414,38 @@ section {
         gap: 5rem;
         position: relative;
 
-        .error-msg {
-            color: rgb(156, 12, 12);
-            font-size: 1rem;
-            position: absolute;
-            left: 50%;
-            top: 15%;
-            transform: translateX(-50%);
-        }
+        .about-contents{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 10rem;
+            row-gap: 3rem;
 
-        .hidden {
-            display: none;
-        }
-
-        .contact-form {
-            width: 600px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-            input,
-            textarea {
-                background: transparent;
-                border: 1px solid $white-color;
-                font-size: 1rem;
-                padding: .5rem 1rem;
-                font-family: inherit;
-                color: $white-color;
+            .internship{
+                margin-top: 7rem;
             }
 
-            textarea {
-                height: 200px;
-            }
+            .about-item {
+                .about-item-title {
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    font-family: $second-font;
+                    color: $light-blue;
+                }
 
-            .form-btn {
-                font-weight: 500;
-                padding: .7rem 0;
+                .about-item-box{
+                    margin-bottom: 1rem;
+
+                    .bold-text {
+                        font-weight: 600;
+                    }
+                }
+
+                .profile-pict{
+                    height: 400px;
+                    border-radius: 40%;
+                }
+
             }
         }
     }
@@ -453,7 +461,7 @@ section {
     .line {
         height: 2px;
         width: 100%;
-        background: $white-color;
+        background: $black-color;
         transition: all .3s ease;
     }
 
@@ -483,7 +491,7 @@ section {
 }
 
 .mobile-navbar {
-    background: $dark-green;
+    background: $light-blue;
     position: fixed;
     width: 50%;
     left: 0;
@@ -531,6 +539,14 @@ section {
         .home-content {
             grid-template-columns: 1fr;
             gap: 5rem;
+
+            .jumbo{
+                .jumbo-heading{
+                    h1 {
+                        font-size: 3rem;
+                    }
+                }
+            }
         }
     }
 
@@ -646,16 +662,19 @@ section {
         .contact-content-container {
             gap: 3rem;
 
-            .contact-form {
-                width: 100%;
+            .about-contents{
+                grid-template-columns: 1fr;
 
-                input,
-                textarea {
-                    font-size: 1rem;
+                .internship{
+                    margin-top: 0;
                 }
 
-                .form-btn {
-                    font-size: .7rem;
+                .about-item{
+                    .profile-pict{
+                        display: none;
+                    }
+
+
                 }
             }
         }
